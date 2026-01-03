@@ -21,6 +21,7 @@ public class CouponController {
     private final CreateCouponUseCase createCouponUseCase;
     private final GetCouponUseCase getCouponUseCase;
     private final DeleteCouponUseCase deleteCouponUseCase;
+
     @PostMapping
     public ResponseEntity<CouponResponse> createCoupon(@Valid @RequestBody CouponRequest request) {
         Coupon couponSaved = createCouponUseCase.execute(request.toModel());
